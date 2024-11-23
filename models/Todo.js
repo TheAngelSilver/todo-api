@@ -11,6 +11,16 @@ const todoSchema = new mongoose.Schema(
       type: Boolean,
       default: false,
     },
+    userId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+      required: true,
+    },
+    priority: {
+      type: String,
+      enum: ["low", "medium", "high"],
+      default: "medium",
+    },
   },
   {
     timestamps: true,
